@@ -28,7 +28,13 @@ function polysIntersect(poly1, poly2){
             const touch=getIntersection(
                 poly1[i],
                 poly1[(i+1)%poly1.length],
-            )
+                poly2[j],
+                poly2[(j+1)%poly2.length]
+            );
+            if(touch){
+                return true;
+            }
         }
     }
+    return false;
 }
